@@ -11016,8 +11016,7 @@ $(function () {
   var myChart;
   var dtt = [];
   var typedata;
-  var typeofbooks = $('#typeofbook');
-  typeofbooks.change(function () {
+  $('#typeofbook').change(function () {
     $.ajaxSetup({
       beforeSend: function beforeSend(xhr, type) {
         if (!type.crossDomain) {
@@ -11035,6 +11034,7 @@ $(function () {
         } else dtt = res;
 
         if (res.length != 0) typedata = Object.keys(res[0])[0];
+        console.log(dtt);
       },
       error: function error(jqXHR, textStatus, errorThrown) {}
     });

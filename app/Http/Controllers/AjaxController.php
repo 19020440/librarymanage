@@ -28,10 +28,14 @@ class AjaxController extends Controller
         $value = $request->value;
         $type = $request->type;
         $index  = array_search($value, Book::TYPE);
+        // if ($type == "category") {
+        //     return DB::table('books')->select(DB::raw('sum(price) as total'))->where($type, 'like', $index . '%')->get();
+        // }
+        // return DB::table('books')->select(DB::raw('sum(price) as total'))->where($type, $value)->get();
         if ($type == "category") {
-            return DB::table('books')->select(DB::raw('sum(price) as total'))->where($type, 'like', $index . '%')->get();
+            return Book::select(Book::raw('sum(price) as total'))->where($type, 'like', $index . '%')->get();
         }
-        return DB::table('books')->select(DB::raw('sum(price) as total'))->where($type, $value)->get();
+        return Book::select(Book::raw('sum(price) as total'))->where($type, $value)->get();
     }
 
     public function dashBoardOfMonth(Request $request)
@@ -91,9 +95,11 @@ class AjaxController extends Controller
     {
         $data = [];
         $valueRequest = $request->category;
-        if ($valueRequest != 0) return  $this->bookRepository->searchDataAjax($valueRequest);
-        else return  response()
-            ->json([]);
+        // if ($valueRequest != 0) return  $this->bookRepository->searchDataAjax($valueRequest);
+        // else return  response()
+        //     ->json([]);
+        if ($valueRequest != 0) return  Book::select($valueRequest) ->distinct()->get();
+        else return $data;
         // return $valueRequest;
     }
 

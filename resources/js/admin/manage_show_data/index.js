@@ -15,8 +15,7 @@ $(function() {
         let myChart;
         let dtt = [];
         let typedata;
-        let typeofbooks = $('#typeofbook');
-        typeofbooks.change(function() {
+        $('#typeofbook').change(function() {
                 $.ajaxSetup({
                     beforeSend: function(xhr, type) {
                         if (!type.crossDomain) {
