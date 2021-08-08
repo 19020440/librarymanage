@@ -124,7 +124,7 @@
                         <div>
                             <label class="input-group-text" for="typeofbook">Tìm theo</label>
                         </div>
-                        @csrf
+                       
                         <select class="custom-select custom-select1" id="typeofbook" name="category">
                             <option selected value="0">Chọn</option>
                             <option value="category">Thể loại sách</option>
