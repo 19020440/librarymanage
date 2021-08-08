@@ -1,0 +1,353 @@
+.pew1 {
+  transition: width ease-in-out 0.4s;
+  width: 230px;
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  height: inherit;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /*activeWidth*/
+}
+
+.pew1 .toolbar__profile {
+  padding-left: 20px;
+}
+
+.pew1 .toolbar__profile-box-img img {
+  transition: transform 0.4s ease-in-out;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.pew1 .activeWidth .toolbar__profile-box-img img {
+  transform: scale(0.5) translate(-50%, -40%);
+}
+
+.pew1 .shadows p {
+  margin: 0;
+  padding-top: 30%;
+  padding-left: 28%;
+}
+
+.pew1 .toolbar__profile-box {
+  text-align: center;
+  height: 83px;
+}
+
+.pew1 .toolbar__profile-box img {
+  width: 40px;
+  height: 40px;
+}
+
+.pew1 .toolbar-namelibrary {
+  color: aliceblue;
+  border-bottom: 1px solid white;
+  padding: 10px 0 10px 20px;
+  display: flex;
+}
+
+.pew1 .toolbar-namelibrary span {
+  margin-left: 20px;
+}
+
+.pew1 .toolbar__profile-box {
+  color: aliceblue;
+  display: flex;
+}
+
+.pew1 .toolbar__profile {
+  padding-top: 20px;
+  border-bottom: 1px solid white;
+}
+
+.pew1 .toolbar__catagory-list {
+  list-style: none;
+  padding: 0;
+  padding: 20px 0 0 0;
+}
+
+.pew1 .toolbar__catagory-item {
+  margin: 10px 0 10px 0;
+  color: white;
+}
+
+.pew1 .toolbar__catagory-link:hover .hover,
+.pew1 .toolbar__catagory-list .hover {
+  background-color: #dc3545;
+}
+
+.pew1 .toolbar__catagory-link {
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pew1 .toolbar__catagory-link p {
+  margin: 0;
+  margin-left: 20px;
+}
+
+.pew1 .toolbar__catagory-link img {
+  width: 30px;
+  height: 30px;
+}
+
+.pew1 .toolbar__catagory-link:hover {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.pew1 .toolbar {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  background-color: #343a40;
+}
+
+.pew1 .shadows {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 650;
+}
+
+.pew1 .toolbar__catagory-link-img2 {
+  height: 16px !important;
+  width: 16px !important;
+  margin-left: 53px;
+  transition: transform 0.2s ease-in;
+}
+
+.pew1 .toolbar__catagory-item-list {
+  overflow: hidden;
+  border-left: 3px solid whitesmoke;
+  color: white;
+  list-style: none;
+  height: 0;
+  transition: height 0.4s ease-in-out;
+  width: inherit;
+  overflow-x: hidden;
+  transform: padding-left 0.4s ease-in-out;
+  margin-left: 4px;
+  padding-left: 0;
+}
+
+.pew1 .activeHeight .toolbar__catagory-item-list {
+  height: 115px;
+}
+
+.pew1 .activeHeight .toolbar__catagory-link-img2 {
+  transform: rotate(-90deg);
+}
+
+.pew1 .toolbar__catagory-item-list li {
+  padding: 6px 0 6px 0;
+  width: 100%;
+  height: auto;
+}
+
+.pew1 .toolbar__catagory-item-list li img {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.pew1 .toolbar__catagory-item-list li a {
+  display: flex;
+  padding-left: 35px;
+  color: white;
+  transition: padding-left 0.4s ease-in-out;
+  height: 26px;
+}
+
+.pew1 .toolbar__catagory-item-list li a p {
+  padding: 3px 0 0 10px;
+}
+
+.pew1 .toolbar__catagory-item-list li a:hover {
+  text-decoration: none;
+}
+
+.pew1 .toolbar__catagory-item-list li:hover {
+  background-color: rgba(213, 219, 224, 0.2);
+}
+
+.pew1 .toolbar__catagory-item-list .hover {
+  background-color: rgba(213, 219, 224, 0.2) !important;
+}
+
+.activeWidth .shadows {
+  -webkit-animation: fadeIn ease-in-out 0.4s forwards;
+          animation: fadeIn ease-in-out 0.4s forwards;
+}
+
+.activeWidth .pew1 {
+  width: 71px;
+}
+
+.activeWidth .toolbar__profile-box-img img {
+  transform: scale(0.5) translate(-50%, -40%);
+}
+
+.activeWidth .shadows {
+  -webkit-animation: fadeIn ease-in-out 0.4s forwards;
+          animation: fadeIn ease-in-out 0.4s forwards;
+}
+
+.pew1:hover {
+  width: 230px;
+  z-index: 4;
+}
+
+.pew1:hover .toolbar__profile-box-img img {
+  transform: scale(1);
+}
+
+/*active color */
+
+.pew1 .activeColor {
+  background-color: #dc3545;
+}
+
+.activeWidth .pew1:hover .shadows {
+  -webkit-animation: fadeOut ease-in-out 0.4s forwards;
+          animation: fadeOut ease-in-out 0.4s forwards;
+}
+
+@media (max-width: 575.98px) {
+  .pew1 {
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+  }
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+  .pew1 {
+    transform: translateX(-100%);
+    -webkit-animation: transformI ease-in-out 0.4s forwards;
+            animation: transformI ease-in-out 0.4s forwards;
+  }
+}
+
+@-webkit-keyframes transformI {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes transformI {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* // Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .pew1 {
+    width: 72px;
+    transform: translateX(-100%);
+    transition: transform ease-in-out 0.4s;
+  }
+}
+
+/* // Large devices (desktops, less than 1200px) */
+
+@media (max-width: 1009px) and (min-width: 992px) {
+  .pew1 {
+    width: 72px;
+    transition: width ease-in-out 0.4s !important;
+    transition: transform ease-in-out 0.4s;
+  }
+
+  .shadows {
+    -webkit-animation: fadeIn ease-in-out 0.4s forwards;
+            animation: fadeIn ease-in-out 0.4s forwards;
+  }
+
+  .toolbar__profile-box-img img {
+    transform: scale(0.5) translate(-50%, -40%);
+  }
+
+  .activeWidth .pew1 {
+    width: 230px;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .activeWidth .shadows {
+    -webkit-animation: fadeOut ease-in-out 0.4s forwards;
+            animation: fadeOut ease-in-out 0.4s forwards;
+  }
+
+  .activeWidth .toolbar__profile-box-img img {
+    transform: scale(1);
+  }
+
+  .pew1:hover .shadows {
+    -webkit-animation: fadeOut ease-in-out 0.4s forwards;
+            animation: fadeOut ease-in-out 0.4s forwards;
+  }
+
+  .pew1:hover {
+    width: 230px;
+    z-index: 4;
+    transition: width 0.4s ease-in-out;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+

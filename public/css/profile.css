@@ -1,0 +1,224 @@
+body input {
+  box-shadow: none !important;
+}
+
+body input:focus {
+  border: 1px solid #dd125f !important;
+}
+
+body .profile {
+  margin: 120px 30px 50px 30px;
+}
+
+body .main-profile {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+body .sub-profile {
+  display: flex;
+  justify-content: center;
+  margin-right: 34px;
+}
+
+body .img-thumbnail {
+  max-width: 80%;
+}
+
+body .profile-heading .profile-heading-text {
+  color: #dd125f;
+  font-size: 28px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  margin-left: 22px;
+}
+
+body .section-heading {
+  padding-bottom: 30px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #dd125f;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+body .section-heading::after {
+  position: absolute;
+  content: "";
+  top: 28px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #dd125f, #fff);
+  transform: translateX(50%);
+}
+
+body .btn-act {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 8px;
+}
+
+body .btn-pro {
+  background: #dd125f;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #dd125f;
+  outline: none;
+  padding: 8px 12px;
+  border-radius: 3px;
+  box-shadow: none;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+body .btn-pro:hover {
+  color: #dd125f;
+  box-shadow: none;
+  outline: none;
+}
+
+body .btn-pro:before {
+  transition: all 0.5s ease;
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  opacity: 0;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+body .btn-pro:hover:before {
+  transition: all 0.5s ease;
+  right: 0;
+  left: 0;
+  opacity: 1;
+  z-index: -1;
+}
+
+body .change-password {
+  padding-top: 30px;
+}
+
+body .lb {
+  width: 200px;
+  margin: 0;
+}
+
+body .lb h4 {
+  font-size: 16px;
+}
+
+body .form-control {
+  padding: 10px 12px;
+  width: 500px;
+  height: 40px;
+}
+
+body .form-group {
+  display: flex;
+  align-items: center;
+}
+
+body .sex-item + .sex-item {
+  margin-left: 18px;
+}
+
+body .sex-item {
+  display: flex;
+  align-items: inherit;
+}
+
+body .sex-input {
+  width: 18px;
+  height: 18px;
+  margin: 0 8px 0 0;
+}
+
+body button[type=submit] {
+  background: #dd125f;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 15px;
+  border: 1px solid #dd125f;
+  outline: none;
+  padding: 12px 12px;
+  border-radius: 3px;
+  box-shadow: none;
+  width: 120px;
+}
+
+body .alert-danger {
+  padding: 0;
+  color: red;
+  background-color: white;
+  border: none;
+  margin: -15px 0px 5px 200px;
+  font-size: 12px;
+  height: 30px;
+}
+
+body .form-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 10px 10px;
+}
+
+body .form-upload .link-img {
+  width: 180px;
+  height: 200px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 0px 6px 1px rgba(0, 0, 0, 0.19);
+  cursor: inherit;
+}
+
+body .form-upload img {
+  width: 180px;
+  height: 200px;
+  position: absolute;
+  margin-top: -90px;
+  border: none;
+  border-radius: 10px;
+}
+
+body .form-upload .btn-ct-primary {
+  border: 2px solid #5e72e4;
+  border-radius: 10px;
+  padding: 4px 20px;
+  background-color: #5e72e4;
+  color: white;
+}
+
+body .form-upload .alert-upload {
+  padding: 0;
+  color: #ca001f;
+  background-color: none;
+  border: none;
+  font-size: 12px;
+  height: auto;
+}
+
+body .hidden {
+  display: none !important;
+}
+

@@ -29,15 +29,9 @@ class RegisterUserRequest extends FormRequest
             'email' => 'required',
             'birth' => 'required',
             'address' => 'required',
+            'username' => 'required|min:6|max:24|unique:users,username,NULL,id,deleted_at,NULL',
+            'password' => 'required|min:6|confirmed'
         ];
-
-        if (isset($this->password)) {
-            $rules['password'] = 'required|min:6|confirmed';
-        }
-
-        if (isset($this->username)) {
-            $rules['username'] = 'required|min:6|max:24|unique:users,username,NULL,id,deleted_at,NULL';
-        }
 
         return $rules;
     }

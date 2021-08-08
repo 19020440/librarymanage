@@ -23,13 +23,13 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     public function getListOrderByUser($userIds, $day_start, $day_end)
     {
         if ($userIds === 1) {
-            return $this->model->whereRaw('substr(time_borrow,1,10) >= ?', $day_start)
-                ->whereRaw('substr(time_borrow,1,10) <= ?', $day_end)
+            return $this->model->whereRaw('substring(time_borrow,1,10) >= ?', $day_start)
+                ->whereRaw('substring(time_borrow,1,10) <= ?', $day_end)
                 ->orderBy('status')->paginate($this->perPage);
         }
         return $this->model->whereIn('user_id', $userIds)
-            ->whereRaw('substr(time_borrow,1,10) >= ?', $day_start)
-            ->whereRaw('substr(time_borrow,1,10) <= ?', $day_end)
+            ->whereRaw('substring(time_borrow,1,10) >= ?', $day_start)
+            ->whereRaw('substring(time_borrow,1,10) <= ?', $day_end)
             ->orderBy('status')->paginate($this->perPage);
     }
 

@@ -129,6 +129,11 @@
                     </div>
                 </div>
             </div>
+            <div class="ddc-link row">
+                <a href="http://www.thuvienhaiphu.com.vn/datafile1/tl_plddc/DC027106.htm?fbclid=IwAR0V8lebMVRkYqOu0AZ7-eFzNi2uPRPC-pcg43-tZ2Ojw6ca97DvZgugjU8"
+                    target="_blank">Tra
+                    cứu thông tin mã DDC tại đây</a>
+            </div>
             @if (count($books))
                 <div class="book-list row">
                     @foreach ($books as $book)

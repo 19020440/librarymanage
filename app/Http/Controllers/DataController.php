@@ -2,11 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Contact;
+use App\Repositories\Order\OrderRepository;
 use Illuminate\Http\Request;
+use App\Repositories\User\UserRepository;
+use App\Repositories\Book\BookRepository;
+use Carbon\Carbon;
 
 class DataController extends Controller
 {
+    private $orderRepository;
+    private $userRepository;
+    private $bookRepository;
+
+    public function __construct(OrderRepository $orderRepository, UserRepository $userRepository, BookRepository $bookRepository)
+    {
+        $this->orderRepository = $orderRepository;
+        $this->userRepository = $userRepository;
+        $this->bookRepository = $bookRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,11 +29,21 @@ class DataController extends Controller
      */
     public function index()
     {
-        $totalBook = DB::table('books')->select(DB::raw('count(*) as totalBook'))->get();
-        $totalUser = DB::table('users')->select(DB::raw('count(*) as totalUser'))->get();
-        $totalOrder = DB::table('orders')->select(DB::raw('count(*) as totalOrder'))->get();
-        $totalContact = DB::table('contacts')->select(DB::raw('count(*) as totalContact'))->get();
-        return view('admin.manage_data.index', compact('totalBook', 'totalUser', 'totalOrder', 'totalContact'));
+        $totalBook = $this->bookRepository->getAll();
+        $totalUser = $this->userRepository->getAll();
+        $totalOrder = $this->orderRepository->getAll();
+        $totalContact = Contact::get();
+        $dateTo = Carbon::now();
+        $dateForm = Carbon::now()->subMonth(1);
+
+        return view('admin.manage_data.index', [
+            'totalBook' => $totalBook,
+            'totalUser' => $totalUser,
+            'totalOrder' => $totalOrder,
+            'totalContact' => $totalContact,
+            'dateForm' => $dateForm->format('Y-m-d'),
+            'dateTo' => $dateTo->format('Y-m-d')
+        ]);
     }
 
     /**

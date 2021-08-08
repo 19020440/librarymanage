@@ -1,0 +1,141 @@
+#list-order {
+  margin: 50px 30px;
+  margin-top: 120px;
+}
+
+#list-order thead .row-tb {
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #dd125f;
+  color: #dd125f;
+  margin: 0 auto;
+}
+
+#list-order tbody {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#list-order tbody .row-tb {
+  transition: all 0.3s ease;
+  width: calc(100% + 10px);
+}
+
+#list-order tbody .row-tb:hover {
+  transform: translateX(-10px);
+}
+
+#list-order .addbook__content-header-box-ct {
+  color: #dd125f;
+  font-size: 28px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 600;
+}
+
+#list-order .selection {
+  justify-content: center;
+}
+
+#list-order .orderbook__content-dashboard {
+  margin-top: 40px;
+}
+
+#list-order .orderbook__content-dashboard-margin {
+  justify-content: center;
+}
+
+#list-order .addbook__content-content {
+  background-color: white;
+  margin: 20px 15px 20px 15px;
+  padding: 20px;
+  box-shadow: 10px -3px 30px rgba(0, 0, 0, 0.13);
+  border: 1px solid #f5f5f5;
+}
+
+#list-order thead .row-tb {
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #dd125f;
+  color: #dd125f;
+}
+
+#list-order .admin__order-handle span:hover {
+  color: #dd125f;
+}
+
+#list-order .btn-confirm {
+  cursor: default;
+}
+
+#list-order .pagination {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 50px;
+  margin-right: 20px;
+}
+
+#list-order .page-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#list-order .page-link {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #333;
+  border-radius: 50%;
+  display: block;
+  line-height: 30px;
+  font-weight: 500;
+  padding: 0px 5px 5px 11px;
+  box-shadow: none;
+  border: none;
+}
+
+#list-order .page-item.active .page-link {
+  background: #dd125f;
+  color: #fff;
+}
+
+#list-order .page-item:hover .page-link {
+  background: rgba(221, 18, 95, 0.5);
+  color: #fff;
+}
+
+#list-order .page-item[rel~=prev] .page-link,
+#list-order .page-item[rel~=next] .page-link {
+  font-size: 20px;
+  line-height: 27px;
+}
+
+#list-order .page-item.disabled .page-link,
+#list-order .page-item.disabled .page-link {
+  background-color: transparent;
+  color: #333;
+}
+
+#list-order .orderbook__content-noOrder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#list-order .no-order-img {
+  width: 280px;
+}
+
+#list-order .no-order-text {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #666;
+}
+

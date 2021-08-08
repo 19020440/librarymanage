@@ -13,6 +13,7 @@ use App\Http\Requests\PasswordRequest;
 use App\Models\Alert;
 use App\Repositories\Book\BookRepository;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\EditProfileRequest;
 
 class UserController extends Controller
 {
@@ -56,7 +57,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function editProfile(RegisterUserRequest $request)
+    public function editProfile(EditProfileRequest $request)
     {
         $user = $request->only([
             'name',

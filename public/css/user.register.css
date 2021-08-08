@@ -1,0 +1,194 @@
+.register {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.register .form-box {
+  width: 700px;
+  height: 580px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 9px #7a76741f;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.register .button-box {
+  width: 240px;
+  height: 40px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #a835071f;
+  border-radius: 30px;
+  display: flex;
+  background: #999;
+}
+
+.register .toggle-btn {
+  padding: 0;
+  width: 120px;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.register #btn {
+  top: 0;
+  left: 120px;
+  position: absolute;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(to right, #1916dd9f, #dd125f);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.register .social-icon {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.register .social-icon img {
+  width: 30px;
+  margin: 0 12px;
+  box-shadow: 0 0 20px 0 #7f7f7f3d;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.register .input-group {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+
+.register #register .input-group-item {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.register .input-field {
+  background-color: #fff;
+  color: #666;
+  padding: 10px 18px;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  position: relative;
+  font-size: 16px;
+  border: 2px solid #ccc;
+}
+
+.register .label-field {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  padding: 0 6px;
+  color: #666;
+  font-size: 16px;
+  transition: top 0.2s ease-in, left 0.2s ease-in, font-size 0.2s ease-in;
+  pointer-events: none;
+}
+
+.register .input-field:hover {
+  border: 2px solid rgba(221, 18, 95, 0.3);
+}
+
+.register .input-field:focus {
+  border: 2px solid #dd125f;
+}
+
+.register .input-field:not(:-moz-placeholder-shown) ~ .label-field {
+  top: -10px;
+  left: 16px;
+  font-size: 13px;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #dd125f;
+}
+
+.register .input-field:not(:-ms-input-placeholder) ~ .label-field {
+  top: -10px;
+  left: 16px;
+  font-size: 13px;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #dd125f;
+}
+
+.register .input-field:focus ~ .label-field,
+.register .input-field:not(:placeholder-shown) ~ .label-field {
+  top: -10px;
+  left: 16px;
+  font-size: 13px;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #dd125f;
+}
+
+.register .submit-btn {
+  width: 40%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #1916dd9f, #dd125f);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.register .forget-pass {
+  font-size: 14px;
+  margin-left: 4px;
+  margin-bottom: 20px;
+}
+
+.register .forget-pass:hover {
+  text-decoration: none;
+}
+
+.register #register {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.register .mt-20 {
+  margin-top: 10px;
+}
+
+.register .row {
+  width: 90%;
+}
+
+.register .alert-danger {
+  padding: 0;
+  color: red;
+  background-color: white;
+  border: none;
+  margin: -20px 0px 0px 0px;
+  font-size: 12px;
+  height: 30px;
+}
+
