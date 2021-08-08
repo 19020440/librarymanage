@@ -1,0 +1,126 @@
+#contact {
+    background-color: #333;
+    color: #fff;
+    padding: 100px 0 80px;
+    .contact-heading {
+        text-align: center;
+        font-size: 44px;
+        font-weight: 500;
+        line-height: 55px;
+        margin-bottom: 20px;
+    }
+    .contact-desc {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    .my-contact-heading {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .my-contact span {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px;
+        margin-bottom: 10px;
+        margin-left: 4px;
+        display: inline-block;
+    }
+    .my-contact-email,
+    .my-contact-phone,
+    .my-contact-address {
+        margin-bottom: 20px;
+    }
+    .address-text {
+        font-size: 16px;
+    }
+    .address-icon,
+    .email-icon,
+    .phone-icon {
+        margin-top: -4px;
+    }
+    .email-text,
+    .phone-text {
+        color: #fff;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .email-text:hover,
+    .phone-text:hover {
+        text-decoration: none;
+        color: #dd125f;
+    }
+    .form-contact-control {
+        width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .form-input {
+        background-color: #333;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 5px;
+        width: 100%;
+        outline: none;
+        position: relative;
+        font-size: 16px;
+        border: 2px solid #ccc;
+    }
+    .form-label {
+        position: absolute;
+        left: 8px;
+        top: 11px;
+        padding: 0 6px;
+        color: #fff;
+        font-size: 16px;
+        transition: top 0.2s ease-in, left 0.2s ease-in, font-size 0.2s ease-in;
+        pointer-events: none;
+    }
+    .form-input:focus {
+        border-color: #dd125f;
+    }
+    .form-input:focus~.form-label,
+    .form-input:not(:placeholder-shown)~.form-label {
+        top: -10px;
+        left: 8px;
+        font-size: 13px;
+        background-color: #333;
+        border-radius: 3px;
+    }
+    .form-send {
+        outline: none;
+        float: right;
+        width: 130px;
+        height: 42px;
+        font-size: 16px;
+        font-weight: 500;
+        background-color: #dd125f;
+        border-color: #dd125f;
+        position: relative;
+        z-index: 1;
+        color: #fff;
+    }
+    .form-send:hover {
+        color: #dd125f;
+    }
+    .form-send:before {
+        transition: all 0.5s ease;
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: 50%;
+        left: 50%;
+        opacity: 0;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+    .form-send:hover:before {
+        transition: all 0.5s ease;
+        right: 0;
+        left: 0;
+        opacity: 1;
+        z-index: -1;
+    }
+}

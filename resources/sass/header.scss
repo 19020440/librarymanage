@@ -1,0 +1,125 @@
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar1 {
+    max-width: 100%;
+    margin-left: 230px;
+    display: flex;
+    justify-content: space-between;
+    transition: margin-left ease-in-out 0.4s;
+    border-bottom: 1px solid #dee2e6;
+    align-items: center;
+    z-index: 100;
+    padding: 10px 0 10px 12px;
+
+    .maincontainer__profile {
+        padding-right: 1.5%;
+    }
+    .maincontainer__profile-box-list {
+        list-style: none;
+        color: black;
+    }
+    .maincontainer__profile-box {
+        border: 1px solid black;
+        position: absolute;
+        top: 38px;
+        right: 35px;
+        z-index: 3;
+        background-color: aliceblue;
+        width: 160px;
+        display: none;
+    }
+
+    .maincontainer__profile-box::before {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 30px;
+        top: -25px;
+        right: 0;
+    }
+    .maincontainer__profile:hover .maincontainer__profile-box {
+        display: block;
+    }
+    .maincontainer__profile-box-list {
+        padding: 0;
+        margin: 0;
+    }
+    .maincontainer__profile-box-item:first-child {
+        border-bottom: 1px solid black;
+    }
+    .maincontainer__profile-box-item:nth-child(2) {
+        border-bottom: 1px solid black;
+    }
+    .maincontainer__profile-box-item {
+        padding: 10px 0 10px 0;
+        font-size: 13px;
+    }
+    .maincontainer__profile-box-item:hover {
+        color: black;
+        opacity: 0.5;
+    }
+}
+.activeWidth .navbar1 {
+    margin-left: 72px;
+}
+
+@media (max-width: 575.98px) {
+    .navbar1 {
+        margin-left: 0;
+    }
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .navbar1 {
+        margin-left: 0;
+    }
+}
+
+@keyframes transformI {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .navbar1 {
+        margin-left: 0;
+    }
+    .activeWidth .navbar1 {
+        margin-left: 230px;
+        transition: margin-left 0.4s ease-in-out;
+    }
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1009px) and (min-width: 992px) {
+    .navbar1 {
+        margin-left: 72px;
+        transition: margin-left 0.4s ease-in-out;
+    }
+
+    .activeWidth .navbar1 {
+        margin-left: 230px;
+        transition: margin-left 0.4s ease-in-out;
+    }
+}

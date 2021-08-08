@@ -1,0 +1,52 @@
+.load {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    div {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+        animation: animate 2s linear infinite;
+    }
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg);
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+            filter: hue-rotate(360deg);
+        }
+    }
+    div::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        left: 6px;
+        bottom: 6px;
+        background: #000;
+        border-radius: 50%;
+        z-index: 10;
+    }
+    div::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+        background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+        border-radius: 50%;
+        z-index: 1;
+        filter: blur(30px);
+    }
+}
