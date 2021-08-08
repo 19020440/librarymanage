@@ -37943,34 +37943,34 @@ $(".btn-upload").on('click', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\admin.login.scss */"./resources/sass/admin.login.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\book_interface.scss */"./resources/sass/book_interface.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\cart.scss */"./resources/sass/cart.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\contact.welcome.scss */"./resources/sass/contact.welcome.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\content.book.scss */"./resources/sass/content.book.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\content.welcome.scss */"./resources/sass/content.welcome.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\footer.welcome.scss */"./resources/sass/footer.welcome.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\header.scss */"./resources/sass/header.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\load.scss */"./resources/sass/load.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.book.scss */"./resources/sass/manage.book.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.contact.scss */"./resources/sass/manage.contact.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.data.scss */"./resources/sass/manage.data.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.list.book.scss */"./resources/sass/manage.list.book.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.orderAdmin.scss */"./resources/sass/manage.orderAdmin.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.user.scss */"./resources/sass/manage.user.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\navbar.admin.scss */"./resources/sass/navbar.admin.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\navbar.book.scss */"./resources/sass/navbar.book.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\navbar.welcome.scss */"./resources/sass/navbar.welcome.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\order.user.scss */"./resources/sass/order.user.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\profile.scss */"./resources/sass/profile.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\slider-view-img.book.scss */"./resources/sass/slider-view-img.book.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\slider.welcome.scss */"./resources/sass/slider.welcome.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\user.login.scss */"./resources/sass/user.login.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\user.register.scss */"./resources/sass/user.register.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\welcome.scss */"./resources/sass/welcome.scss");
-module.exports = __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\_variables.scss */"./resources/sass/_variables.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\admin.login.scss */"./resources/sass/admin.login.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\book_interface.scss */"./resources/sass/book_interface.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\cart.scss */"./resources/sass/cart.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\contact.welcome.scss */"./resources/sass/contact.welcome.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\content.book.scss */"./resources/sass/content.book.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\content.welcome.scss */"./resources/sass/content.welcome.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\footer.welcome.scss */"./resources/sass/footer.welcome.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\header.scss */"./resources/sass/header.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\load.scss */"./resources/sass/load.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\manage.book.scss */"./resources/sass/manage.book.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\manage.contact.scss */"./resources/sass/manage.contact.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\manage.data.scss */"./resources/sass/manage.data.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\manage.list.book.scss */"./resources/sass/manage.list.book.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\manage.orderAdmin.scss */"./resources/sass/manage.orderAdmin.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\manage.user.scss */"./resources/sass/manage.user.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\navbar.admin.scss */"./resources/sass/navbar.admin.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\navbar.book.scss */"./resources/sass/navbar.book.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\navbar.welcome.scss */"./resources/sass/navbar.welcome.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\order.user.scss */"./resources/sass/order.user.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\profile.scss */"./resources/sass/profile.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\slider-view-img.book.scss */"./resources/sass/slider-view-img.book.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\slider.welcome.scss */"./resources/sass/slider.welcome.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\user.login.scss */"./resources/sass/user.login.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\user.register.scss */"./resources/sass/user.register.scss");
+__webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\welcome.scss */"./resources/sass/welcome.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\sass\_variables.scss */"./resources/sass/_variables.scss");
 
 
 /***/ })

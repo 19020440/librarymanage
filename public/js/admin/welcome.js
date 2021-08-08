@@ -2527,7 +2527,7 @@ slider.start();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\js\admin\welcome\index.js */"./resources/js/admin/welcome/index.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\js\admin\welcome\index.js */"./resources/js/admin/welcome/index.js");
 
 
 /***/ })

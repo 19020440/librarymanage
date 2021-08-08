@@ -2298,7 +2298,7 @@ $('.header__notify-header #readed').on('click', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\js\admin\manage_order\index.js */"./resources/js/admin/manage_order/index.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\librarymanage\resources\js\admin\manage_order\index.js */"./resources/js/admin/manage_order/index.js");
 
 
 /***/ })
