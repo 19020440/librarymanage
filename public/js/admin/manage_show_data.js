@@ -11015,7 +11015,6 @@ $(function () {
   }];
   var myChart;
   var dtt = [];
-  var typedata;
   $('#typeofbook').change(function () {
     $.ajaxSetup({
       beforeSend: function beforeSend(xhr, type) {
@@ -11031,9 +11030,9 @@ $(function () {
       success: function success(res) {
         if ($('#typeofbook').val() == 'category') {
           dtt = [].concat(typeCategory);
-        } else dtt = res;
+        } else dtt = res; // if (res.length != 0) typedata = Object.keys((res[0]))[0];
 
-        if (res.length != 0) typedata = Object.keys(res[0])[0];
+
         console.log(dtt);
       },
       error: function error(jqXHR, textStatus, errorThrown) {}
@@ -11053,7 +11052,7 @@ $(function () {
     } else {
       if ($(this).val() == '') document.querySelector('.dashboard-money-content-search-listsearch-list').innerHTML = '<li>type some thing</li>';else {
         var rsSearch = dtt.reduce(function (arr, value) {
-          return arr.concat(value[typedata].toLowerCase().search($(_this).val().toLocaleLowerCase()) != -1 ? "<li>".concat(value[typedata], "</li>") : undefined).filter(function (x) {
+          return arr.concat(value[$('#typeofbook').val()].toLowerCase().search($(_this).val().toLocaleLowerCase()) != -1 ? "<li>".concat(value[$('#typeofbook').val()], "</li>") : undefined).filter(function (x) {
             return x != undefined;
           });
         }, []);

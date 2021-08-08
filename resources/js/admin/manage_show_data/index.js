@@ -14,7 +14,6 @@ $(function() {
         ];
         let myChart;
         let dtt = [];
-        let typedata;
         $('#typeofbook').change(function() {
                 $.ajaxSetup({
                     beforeSend: function(xhr, type) {
@@ -33,7 +32,7 @@ $(function() {
                         if ($('#typeofbook').val() == 'category') {
                             dtt = [...typeCategory];
                         } else dtt = res;
-                        if (res.length != 0) typedata = Object.keys((res[0]))[0];
+                        // if (res.length != 0) typedata = Object.keys((res[0]))[0];
                         console.log(dtt);
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
@@ -55,7 +54,7 @@ $(function() {
                 else {
                     let rsSearch = dtt.reduce((arr, value) => {
 
-                        return arr.concat(value[typedata].toLowerCase().search($(this).val().toLocaleLowerCase()) != -1 ? `<li>${value[typedata]}</li>` : undefined).filter(x => x != undefined);
+                        return arr.concat(value[$('#typeofbook').val()].toLowerCase().search($(this).val().toLocaleLowerCase()) != -1 ? `<li>${value[$('#typeofbook').val()]}</li>` : undefined).filter(x => x != undefined);
                     }, []);
                     if (rsSearch.length == 0) document.querySelector('.dashboard-money-content-search-listsearch-list').innerHTML = '<li>the result is not exist</li>';
                     else document.querySelector('.dashboard-money-content-search-listsearch-list').innerHTML = Array.from(new Set(rsSearch)).join('');
