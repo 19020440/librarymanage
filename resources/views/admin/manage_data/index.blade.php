@@ -126,7 +126,7 @@
                         </div>
                        
                         <select class="custom-select custom-select1" id="typeofbook" name="category">
-                            <option selected value="0">Chọn</option>
+                            <option selected value="none">Chọn</option>
                             <option value="category">Thể loại sách</option>
                             <option value="auth">Tác giả</option>
                             <option value="publisher">Nhà xuất bản</option>
