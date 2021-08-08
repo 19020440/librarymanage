@@ -98,8 +98,9 @@ class AjaxController extends Controller
         // if ($valueRequest != 0) return  $this->bookRepository->searchDataAjax($valueRequest);
         // else return  response()
         //     ->json([]);
-        if ($valueRequest != 0) return  Book::select($valueRequest) ->distinct()->get();
-        else return $valueRequest;
+        // if ($valueRequest != 0) 
+        return  Book::select($valueRequest) ->distinct()->get();
+        // else return $valueRequest;
         // return $valueRequest;
     }
 
