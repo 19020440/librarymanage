@@ -2141,6 +2141,7 @@ $(function () {
   };
 
   var intBindStringMoney = function intBindStringMoney(e) {
+    e = Math.round(e);
     var arr = [];
 
     while (e > 0) {
@@ -2186,8 +2187,9 @@ $(function () {
           },
           success: function success(res) {
             var data = JSON.parse(res);
+            console.log(data.price.slice(data.price.indexOf('$') + 1) * 23000);
             $('#exampleFormControlTextarea1').val(decodeHtml(decodeHtmlCharCodes(data.content).trim()));
-            $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth).trim()));
+            $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth.slice(0, data.auth.indexOf('(') - 1)).trim()));
             $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0, decodeHtmlCharCodes(data.publisher).indexOf('('))));
             $('input[name="name"]').val(decodeHtml(decodeHtmlCharCodes(data.name).trim()));
             $('input[name="image1"]').next().attr('src', data.frontImage);

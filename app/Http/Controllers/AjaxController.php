@@ -123,10 +123,13 @@ class AjaxController extends Controller
                 break;
             }
         }
-        // $behindImage =  $html->find('#imageBlockThumbs span', 0)->children(1)->children(0)->getAttribute('src');
-        $frontImage =  $html->find('#img-canvas img', 0)->getAttribute('src');
+        $behindImage = '';
+        if($html->find('#imageBlockThumbs span div', 1) != null) {
+            $behindImage = $html->find('#imageBlockThumbs span div img', 1)->getAttribute('src');
+        }
+        $frontImage =  $html->find('div#img-canvas img', 0)->getAttribute('src');
         $name =  validate($html->find('#productTitle', 0));
-        $auth =  validate($html->find('a.contributorNameID', 0));
+         $auth =  validate($html->find('#bylineInfo span', 0));
         $price = '';
         $arr = array();
         foreach ($html->find('#tmmSwatches ul li') as $li) {
