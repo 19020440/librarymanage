@@ -93,7 +93,7 @@ class AjaxController extends Controller
 
     public function searchDataByAjax(Request $request)
     {
-        $data = [];
+        $data = ["sai"];
         $valueRequest = $request->category;
         // if ($valueRequest != 0) return  $this->bookRepository->searchDataAjax($valueRequest);
         // else return  response()
