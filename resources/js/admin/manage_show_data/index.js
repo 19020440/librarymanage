@@ -35,6 +35,7 @@ $(function() {
                             dtt = [...typeCategory];
                         } else dtt = res;
                         if (res.length != 0) typedata = Object.keys((res[0]))[0];
+                        console.log(dtt);
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
 
