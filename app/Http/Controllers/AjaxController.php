@@ -109,11 +109,11 @@ class AjaxController extends Controller
     {
         $link = $request->link;
 
-        function validate($input)
-        {
-            if ($input != null) return $input->plaintext;
-            else return '';
-        }
+        // function validate($input)
+        // {
+        //     if ($input != null) return $input->plaintext;
+        //     else return '';
+        // }
         // $url = "https://www.amazon.com/dp/$link/ref=s9_acsd_hps_bw_c2_x_5_i?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-8&pf_rd_r=M95V84YTA4N783WWYDFK&pf_rd_t=101&pf_rd_p=471146b1-73a8-45e2-aa6e-e79125421657&pf_rd_i=283155";
         // $html = HtmlDomParser::file_get_html("https://www.amazon.com/dp/$link/ref=s9_acsd_hps_bw_c2_x_5_i?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-8&pf_rd_r=M95V84YTA4N783WWYDFK&pf_rd_t=101&pf_rd_p=471146b1-73a8-45e2-aa6e-e79125421657&pf_rd_i=283155");
         
@@ -166,7 +166,11 @@ class AjaxController extends Controller
                 return $links;
             } 
         });
-        return $a[16];
+         $rs = '';
+        foreach ($a as $value) {
+            if($value) $rs = $value;
+        }
+        return $rs;
     }
     $client1 = new Client(); 
     $crawler1 = $client1->request('GET', getLink($link));

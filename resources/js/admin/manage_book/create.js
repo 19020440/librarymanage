@@ -102,7 +102,7 @@ $(function() {
               // if(data.price == 0)  $('input[name="price"]').val(0);
               // else $('input[name="price"]').val(intBindStringMoney(data.price.slice(data.price.indexOf('$')+1) * 23000));
               
-              $('input[name="year_start"]').val(decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf(',')+1, data.publisher.trim().length-1)); 
+              $('input[name="year_start"]').val(decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf(',')+1, data.publisher.trim().length)); 
             },
             error: function(jqXHR, textStatus, errorThrown) {
         
@@ -130,13 +130,16 @@ $(function() {
 function checkISBN(isbn) {
   isbn = isbn.replaceAll('-','');
  if(isbn.length == 13) {
-     let sum = 0;
-     let count = 9;
-     while(count > 0) {
-         sum += isbn[count+2]*count;
-         count--;
-     }
-     return (sum - ((isbn[12] == 'X' ||isbn[12] == 'x' )? 10 :isbn[12]))%11 == 0 ? true : false;
+  let sum1=0;
+  let sum = 0;
+      for(let i=0;i < isbn.length-1; ++i) {
+          if(i%2 == 0) sum1+=isbn[i]*1;
+          else sum+=isbn[i]*1;
+      }
+  if((10-(sum1+sum*3)%10) == 10) {
+      if(isbn[12] == 0) return true;
+      else return false;
+  } else return (10-(sum1+sum*3)%10) == isbn[12]? true : false;
 
  }
  else if(isbn.length == 10) {
