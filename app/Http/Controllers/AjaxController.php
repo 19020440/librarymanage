@@ -157,9 +157,9 @@ class AjaxController extends Controller
         // $data = json_encode($data);
         // return $data;
         
-    function getLink () {
+    function getLink ($link) {
         $client = new Client();
-        $crawler = $client->request('GET', 'https://www.google.com.vn/search?tbm=bks&hl=vi&q=isbn%3A0593298942');
+        $crawler = $client->request('GET', "https://www.google.com.vn/search?tbm=bks&hl=vi&q=isbn%3A$link");
         $a = $crawler->filter('a')->each(function ($node) {
             // $b = $crawler->filter('a');
             if (strpos($node->link()->getUri(), 'books') !== false) {
@@ -170,7 +170,7 @@ class AjaxController extends Controller
         return $a[16];
     }
     $client1 = new Client(); 
-    $crawler1 = $client1->request('GET', getLink());
+    $crawler1 = $client1->request('GET', getLink($link));
     $name1 = $crawler1->filter('h1.booktitle')->each(function ($node) {
         return ($node ->text());
     });
