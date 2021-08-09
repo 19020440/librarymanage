@@ -11016,13 +11016,13 @@ $(function () {
   var myChart;
   var dtt = [];
   $('#typeofbook').change(function () {
-    // $.ajaxSetup({
-    //     beforeSend: function(xhr, type) {
-    //         if (!type.crossDomain) {
-    //             xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
-    //         }
-    //     },
-    // });
+    $.ajaxSetup({
+      beforeSend: function beforeSend(xhr, type) {
+        if (!type.crossDomain) {
+          xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+        }
+      }
+    });
     $.ajax({
       type: 'POST',
       url: '/ajax/search',
@@ -11061,14 +11061,14 @@ $(function () {
     }
 
     $('.dashboard-money-content-search-listsearch-list li').on('click', function () {
-      $('#searchinput').val($(this).text()); // $.ajaxSetup({
-      //     beforeSend: function(xhr, type) {
-      //         if (!type.crossDomain) {
-      //             xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
-      //         }
-      //     },
-      // });
-
+      $('#searchinput').val($(this).text());
+      $.ajaxSetup({
+        beforeSend: function beforeSend(xhr, type) {
+          if (!type.crossDomain) {
+            xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+          }
+        }
+      });
       $.ajax({
         type: 'POST',
         url: '/ajax/totalMoney',
