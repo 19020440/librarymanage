@@ -97,13 +97,12 @@ class AjaxController extends Controller
     {
         $data = ["sai"];
         $valueRequest = $request->category;
-        // if ($valueRequest != 0) return  $this->bookRepository->searchDataAjax($valueRequest);
-        // else return  response()
-        //     ->json([]);
-        if ($valueRequest != 'none') 
-        return  Book::select($valueRequest) ->distinct()->get();
-        else return $valueRequest;
-        // return $valueRequest;
+        if ($valueRequest != 'none') return  $this->bookRepository->searchDataAjax($valueRequest);
+        else return  response()
+            ->json($data);
+        // if ($valueRequest != 'none') 
+        // return  Book::select($valueRequest) ->distinct()->get();
+        // else return $valueRequest;
     }
 
     public function getDaTa(Request $request)
