@@ -2187,19 +2187,19 @@ $(function () {
           },
           success: function success(res) {
             var data = JSON.parse(res);
-            console.log(data.price.slice(data.price.indexOf('$') + 1) * 23000);
             $('#exampleFormControlTextarea1').val(decodeHtml(decodeHtmlCharCodes(data.content).trim()));
-            $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth.slice(0, data.auth.indexOf('(') - 1)).trim()));
-            $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0, decodeHtmlCharCodes(data.publisher).indexOf('('))));
+            $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth).trim()));
+            $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0, decodeHtmlCharCodes(data.publisher).indexOf(','))));
             $('input[name="name"]').val(decodeHtml(decodeHtmlCharCodes(data.name).trim()));
             $('input[name="image1"]').next().attr('src', data.frontImage);
             $('input[name="image1"]').next().attr('class', '');
-            $('input[name="image1"]').val(data.frontImage);
-            $('input[name="image2"]').next().attr('src', data.behindImage);
-            $('input[name="image2"]').next().attr('class', '');
-            $('input[name="image2"]').val(data.behindImage);
-            $('input[name="price"]').val(intBindStringMoney(data.price.slice(data.price.indexOf('$') + 1) * 23000));
-            $('input[name="year_start"]').val(decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf('(') + 1, data.publisher.trim().length - 1));
+            $('input[name="image1"]').val(data.frontImage); // $('input[name="image2"]').next().attr('src',data.behindImage);
+            // $('input[name="image2"]').next().attr('class','');
+            // $('input[name="image2"]').val(data.behindImage);
+            // if(data.price == 0)  $('input[name="price"]').val(0);
+            // else $('input[name="price"]').val(intBindStringMoney(data.price.slice(data.price.indexOf('$')+1) * 23000));
+
+            $('input[name="year_start"]').val(decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf(',') + 1, data.publisher.trim().length - 1));
           },
           error: function error(jqXHR, textStatus, errorThrown) {}
         });

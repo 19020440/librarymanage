@@ -8,6 +8,8 @@ use App\Repositories\Book\BookRepository;
 use App\Models\Book;
 use Carbon\Carbon;
 use KubAT\PhpSimple\HtmlDomParser;
+use Goutte\Client;
+
 
 class AjaxController extends Controller
 {
@@ -114,43 +116,101 @@ class AjaxController extends Controller
             else return '';
         }
         // $url = "https://www.amazon.com/dp/$link/ref=s9_acsd_hps_bw_c2_x_5_i?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-8&pf_rd_r=M95V84YTA4N783WWYDFK&pf_rd_t=101&pf_rd_p=471146b1-73a8-45e2-aa6e-e79125421657&pf_rd_i=283155";
-        $html = HtmlDomParser::file_get_html("https://www.amazon.com/dp/1641526270/ref=s9_acsd_hps_bw_c2_x_5_i?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-8&pf_rd_r=M95V84YTA4N783WWYDFK&pf_rd_t=101&pf_rd_p=471146b1-73a8-45e2-aa6e-e79125421657&pf_rd_i=283155");
-        $publisher = '';
-        $content =  validate($html->find('#bookDescription_feature_div', 0));
-        foreach ($html->find('#detailBullets_feature_div #detailBullets_feature_div li') as $li) {
-            if (strpos($li->plaintext, "Publisher") !== false) {
-                $publisher = $li->find('span span', 1)->plaintext;
-                break;
-            }
-        }
-        $behindImage = '';
-        if($html->find('#imageBlockThumbs span div', 1) != null) {
-            $behindImage = $html->find('#imageBlockThumbs span div img', 1)->getAttribute('src');
-        }
-        $frontImage =  $html->find('div#img-canvas img', 0)->getAttribute('src');
-        $name =  validate($html->find('#productTitle', 0));
-         $auth =  validate($html->find('#bylineInfo span', 0));
-        $price = '';
-        $arr = array();
-        foreach ($html->find('#tmmSwatches ul li') as $li) {
-            array_push($arr, $li->find('a span', 1)->plaintext);
-        }
-        if (count($arr) >= 3) {
-            $price = $arr[2];
-        } else if (count($arr) == 0) {
-            $price = 0;
-        } else $price = $arr[0];
-        $data = [
-            "content" =>  "$content",
-            "price" => $price,
-            "publisher" => $publisher,
-            // "behindImage" => $behindImage,
-            "frontImage" => $frontImage,
-            "name" => $name,
-            "auth" => $auth,
+        // $html = HtmlDomParser::file_get_html("https://www.amazon.com/dp/$link/ref=s9_acsd_hps_bw_c2_x_5_i?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-8&pf_rd_r=M95V84YTA4N783WWYDFK&pf_rd_t=101&pf_rd_p=471146b1-73a8-45e2-aa6e-e79125421657&pf_rd_i=283155");
+        
+        
+        // $publisher = '';
+        // $content =  validate($html->find('#bookDescription_feature_div', 0));
+        // foreach ($html->find('#detailBullets_feature_div #detailBullets_feature_div li') as $li) {
+        //     if (strpos($li->plaintext, "Publisher") !== false) {
+        //         $publisher = $li->find('span span', 1)->plaintext;
+        //         break;
+        //     }
+        // }
+        // $behindImage = '';
+        // if($html->find('#imageBlockThumbs span div', 1) != null) {
+        //     $behindImage = $html->find('#imageBlockThumbs span div img', 1)->getAttribute('src');
+        // }
+        // $frontImage =  $html->find('div#img-canvas img', 0)->getAttribute('src');
+        // $name =  validate($html->find('#productTitle', 0));
+        //  $auth =  validate($html->find('#bylineInfo span', 0));
+        // $price = '';
+        // $arr = array();
+        // foreach ($html->find('#tmmSwatches ul li') as $li) {
+        //     array_push($arr, $li->find('a span', 1)->plaintext);
+        // }
+        // if (count($arr) >= 3) {
+        //     $price = $arr[2];
+        // } else if (count($arr) == 0) {
+        //     $price = 0;
+        // } else $price = $arr[0];
+        // $data = [
+            // "content" =>  "$content",
+            // "price" => $price,
+            // "publisher" => $publisher,
+            // // "behindImage" => $behindImage,
+            // "frontImage" => $frontImage,
+            // "name" => $name,
+            // "auth" => $auth,
 
-        ];
-        $data = json_encode($data);
-        return $data;
+        // ];
+        // $data = json_encode($data);
+        // return $data;
+        
+    function getLink () {
+        $client = new Client();
+        $crawler = $client->request('GET', 'https://www.google.com.vn/search?tbm=bks&hl=vi&q=isbn%3A0593298942');
+        $a = $crawler->filter('a')->each(function ($node) {
+            // $b = $crawler->filter('a');
+            if (strpos($node->link()->getUri(), 'books') !== false) {
+                $links = $node->link()->getUri();
+                return $links;
+            } 
+        });
+        return $a[16];
+    }
+    $client1 = new Client(); 
+    $crawler1 = $client1->request('GET', getLink());
+    $name1 = $crawler1->filter('h1.booktitle')->each(function ($node) {
+        return ($node ->text());
+    });
+    
+    $content1 = $crawler1->filter('div#synopsistext')->each(function ($node) {
+        return $node ->text();
+    });
+
+    $author1 = $crawler1->filter('div.bookinfo_sectionwrap div')->each(function ($node) {
+        return $node ->text();
+    });
+    $frontImage1 = $crawler1->filter('div.bookcover img')->each(function ($node) {
+        return $node->attr('src');
+    });
+    $name = ' ';
+    $auth = '';
+    $publisher = '';
+    $frontImage = '';
+    $content = '';
+    $price = 0;
+    if(count($name1) != 0) $name = $name1[0];
+    if(count($content1) != 0) $content = $content1[0];
+
+    if(count($author1) >=2){
+        $auth = $author1[0];
+        $publisher = $author1[1];
+    } else if($author1 == 1) {
+        $auth = $author1[0];
+    }
+
+    if(count($frontImage1) != 0) $frontImage = $frontImage1[0];
+    $data = [
+        "content" =>  "$content",
+        "price" => $price,
+        "publisher" => $publisher,
+        "frontImage" => $frontImage,
+        "name" => $name,
+        "auth" => $auth,
+    ]; 
+    $data = json_encode($data);
+    return $data;
     }
 }
