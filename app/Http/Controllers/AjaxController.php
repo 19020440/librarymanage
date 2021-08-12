@@ -9,6 +9,7 @@ use App\Models\Book;
 use Carbon\Carbon;
 use KubAT\PhpSimple\HtmlDomParser;
 use Goutte\Client;
+use Symfony\Component\HttpClient\HttpClient;
 
 
 class AjaxController extends Controller
@@ -156,8 +157,8 @@ class AjaxController extends Controller
         // $data = json_encode($data);
         // return $data;
         
-    function getLink ($link) {
-        $client = new Client();
+    // function getLink ($link) {
+        $client = new Client(HttpClient::create(['timeout' => 60]));
         $crawler = $client->request('GET', "https://www.google.com.vn/search?tbm=bks&hl=vi&q=isbn%3A$link");
         $a = $crawler->filter('a')->each(function ($node) {
             // $b = $crawler->filter('a');
@@ -170,10 +171,12 @@ class AjaxController extends Controller
         foreach ($a as $value) {
             if($value) $rs = $value;
         }
-        return $rs;
-    }
-    $client1 = new Client(); 
-    $crawler1 = $client1->request('GET', getLink($link));
+        // return $rs;
+        
+       
+    // }
+    // $client1 = new Client(); 
+    $crawler1 = $client->request('GET', $rs);
     $name1 = $crawler1->filter('h1.booktitle')->each(function ($node) {
         return ($node ->text());
     });
